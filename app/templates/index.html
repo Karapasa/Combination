@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div id ='container' class="container">
+    <div class="mb-3 p-3 row bg-dark">
+        <div class="col-lg-12 text-center">
+            <h1 class="text-white">Комбинация взаимоисключающих параметров</h1>
+        </div>
+    </div>
+
+    <!-- Описание для чего эта страница -->
+    <div class="m-3 row">
+        <h2>Описание</h2>
+        <p>На этой страницы Вы можете получить все возможные комбинaции множественных параметров, у которых имееюся взаимоисключающие параметры</p>
+    </div>
+    <!-- Форма для ввода новых параметров -->
+    <div class="m-4 row">
+        <div class="col-1"></div>
+        <div class="col-10"><h2>Ввести параметры</h2></div>
+        <div class="col-1"></div>
+    </div>
+        <form action="">
+            <div class="form-row">
+                <div class="col-1"></div>
+                <div class="form-group col-5">
+                    <label for="name_parametr">Название параметр: </label>
+                    <input id="name_parametr" class="form-control">
+                </div>
+                <div class="form-group col-5">
+                    <label for="quantity_options">Количество вариантов параметра: </label>
+                    <input id="quantity_options" class="form-control">
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </form>
+    <div class="m-3 row justify-content-center">
+        <button id="add_parametr" type="button" class="btn btn-outline-dark">Добавить параметр</button>
+    </div>
+    <!-- Форма для ввода исключений -->
+    <div class="m-4 row">
+        <div class="col-1"></div>
+        <div class="col-10"><h2>Ввести исключения </h2></div>
+        <div class="col-1"></div>
+    </div>
+        <form action="">
+            <div class="form-row">
+                <div class="col-1"></div>
+                <div class="form-group col-5">
+                        <label for="name_par_exc">Название параметр: </label>
+                        <input id="name_par_exc" class="form-control">
+                </div>
+                <div class="form-group col-5">
+                    <label for="exception_parametr">Исключения для параметра: </label>
+                    <input id="exception_parametr" class="form-control">
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </form>
+    <div class="m-3 row justify-content-center">
+        <button id="add_exc" type="button" class="btn btn-outline-dark">Добавить исключения</button>
+    </div>
+
+    <!-- Таблица с текущеми введеными параметрами от пользователя -->
+    <div class="mt-4 mx-4 row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table id="tbl_of_parametrs" class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Параметр</th>
+                    <th scope="col">Кол-во</th>
+                    <th scope="col">Удалить</ths>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+        <!-- Очистить таблицу -->
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col">
+            <p><a id="clear_all_par" href="#tbl_of_parametrs">Очистить все</a></p>
+        </div>
+    </div>
+
+    <!-- Таблица с текущеми введеными исключениями от пользователя -->
+    <div class="mt-4 mx-4 row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table id="tbl_of_exc" class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Параметр</th>
+                        <th scope="col">Исключения</th>
+                        <th scope="col">Удалить</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+        <!-- Очистить таблицу -->
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col">
+            <p><a id="clear_all_exc" href="#tbl_of_exc">Очистить все</a></p>
+        </div>
+    </div>
+    <!-- Кнопка генерации результата -->
+    <div class="m-4 row justify-content-center">
+        <button id="generate" type="button" class="btn btn-dark btn-lg">СГЕНЕРИРОВАТЬ ДАННЫЕ</button>
+    </div>
+
+
+    <!-- Блок с результатами -->
+    <div id="output_data">
+        <div class="m-4 row">
+            <div class="col-1"></div>
+            <div class="col">
+                <div id="xls_link"></div>
+            </div>
+        </div>
+        <div class="m-4 row">
+            <div class="col-3"></div>
+            <div id="output_txt" class="col"></div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="container">
+    <div class="mt-4 p-3 h-100 bg-dark row">
+        <footer><p class="text-white">&copy 2021</p></footer>
+    </div>
+</div>
+{% endblock %}
