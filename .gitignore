@@ -3,5 +3,5 @@
 __pycache__/
 *.py[cod]
 *.pyc
-*/combs/*.txt
-*/combs/*.xlsx
+app/static/combs/*.txt
+app/static/combs/*.xlsx
