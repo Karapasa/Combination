@@ -3,6 +3,14 @@ from itertools import product
 from openpyxl import Workbook
 import datetime
 
+dir_name = os.path.join(os.path.dirname(os.getcwd()), 'static/combs')
+
+try:
+    os.mkdir(dir_name)
+    print("Directory " , dir_name ,  " Created ")
+except FileExistsError:
+    print("Directory " , dir_name ,  " already exists")
+
 
 def res(datas, exc_set):
     # Инициализируем данные
