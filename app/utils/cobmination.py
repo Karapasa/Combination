@@ -3,7 +3,7 @@ from itertools import product
 from openpyxl import Workbook
 import datetime
 
-dir_name = os.path.join(os.path.dirname(os.getcwd()), 'static/combs')
+dir_name = os.path.join(os.getcwd(), 'app/static/combs')
 
 try:
     os.mkdir(dir_name)
