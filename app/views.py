@@ -14,9 +14,7 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     data = request.get_json(force=True)
-    print(data)
     name = res(data['parlist'], data['exclist'])
-    print(name)
     moving_to_dir(name)
     logger.debug("Данные и исключения: %s | %s", data['parlist'], data['exclist'])
     return make_response(name)
