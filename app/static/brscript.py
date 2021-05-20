@@ -156,7 +156,7 @@ class Comb:
 
 @bind(document['generate'], 'click')
 def generate(e):
-    url = 'http://comb.karapasa.ru/generate'
+    url = 'https://comb.karapasa.ru/generate'
     data = {'parlist': json.loads(storage['parlist']), 'exclist': json.loads(storage['exclist'])}
     ajax.post(url, data=json.dumps(data), oncomplete=output_data)
 
