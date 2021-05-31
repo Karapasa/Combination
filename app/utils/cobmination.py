@@ -7,9 +7,9 @@ dir_name = os.path.join(os.getcwd(), 'app/static/combs')
 
 try:
     os.mkdir(dir_name)
-    print("Directory " , dir_name ,  " Created ")
+    print("Directory ", dir_name, " Created ")
 except FileExistsError:
-    print("Directory " , dir_name ,  " already exists")
+    print("Directory ", dir_name, " already exists")
 
 
 def res(datas, exc_set):
@@ -62,7 +62,7 @@ def res(datas, exc_set):
         result = res3
 
     name, time = save_xlxs(result)
-    save_txt(result, time)
+    save_txt(result, name)
     return name
 
 
@@ -80,8 +80,8 @@ def save_xlxs(res):
     return name, time
 
 
-def save_txt(res, time):
-    with open(f'combination-{time}.txt', 'w') as f:
+def save_txt(res, name):
+    with open(f'{name}.txt', 'w') as f:
         f.write('Существуют следующие комбинации:\n')
         for line in res:
             comb = ','.join(line)
